@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>وما هو بقول بشر | مجمع إعجاز القرآن والعلم الحديث</title>
+    <title>وما هو بقول بشر | الموسوعة الشاملة لإعجاز القرآن</title>
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,11 +15,14 @@
         :root {
             --bg-primary: #070b12;
             --bg-secondary: #0d1527;
-            --card-bg: rgba(18, 28, 49, 0.7);
-            --card-border: rgba(212, 175, 55, 0.2);
+            --card-bg: rgba(18, 28, 49, 0.75);
+            --card-border: rgba(212, 175, 55, 0.25);
             --gold-primary: #d4af37;
             --gold-gradient: linear-gradient(135deg, #f3e5ab 0%, #d4af37 50%, #aa7c11 100%);
             --cyan-accent: #00e5ff;
+            --purple-accent: #a855f7;
+            --emerald-accent: #10b981;
+            --amber-accent: #f59e0b;
             --text-main: #f0f4f8;
             --text-muted: #94a3b8;
             --highlight-bg: rgba(0, 229, 255, 0.18);
@@ -47,12 +50,11 @@
                 radial-gradient(circle at 90% 80%, rgba(0, 229, 255, 0.05) 0%, transparent 40%);
         }
 
-        /* Navbar */
         nav {
             position: sticky;
             top: 0;
             z-index: 1000;
-            background: rgba(7, 11, 18, 0.85);
+            background: rgba(7, 11, 18, 0.9);
             backdrop-filter: blur(15px);
             border-bottom: 1px solid var(--card-border);
             padding: 1rem 5%;
@@ -82,29 +84,8 @@
             -webkit-text-fill-color: transparent;
         }
 
-        .nav-links {
-            display: flex;
-            gap: 20px;
-            list-style: none;
-        }
-
-        .nav-links a {
-            color: var(--text-muted);
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s;
-            padding: 6px 12px;
-            border-radius: 6px;
-        }
-
-        .nav-links a:hover, .nav-links a.active {
-            color: var(--gold-primary);
-            background: rgba(212, 175, 55, 0.1);
-        }
-
-        /* Hero Section */
         header.hero {
-            padding: 5rem 1rem 3rem 1rem;
+            padding: 4rem 1rem 2rem 1rem;
             text-align: center;
             position: relative;
             max-width: 900px;
@@ -113,7 +94,7 @@
 
         .hero-subtitle {
             color: var(--cyan-accent);
-            font-size: 1rem;
+            font-size: 0.95rem;
             letter-spacing: 2px;
             text-transform: uppercase;
             font-weight: 700;
@@ -122,8 +103,8 @@
 
         .hero-title {
             font-family: var(--font-title);
-            font-size: 3rem;
-            margin-bottom: 1.5rem;
+            font-size: 2.8rem;
+            margin-bottom: 1.2rem;
             line-height: 1.3;
             background: linear-gradient(180deg, #ffffff 0%, #cbd5e1 100%);
             -webkit-background-clip: text;
@@ -132,16 +113,48 @@
 
         .hero-description {
             color: var(--text-muted);
-            font-size: 1.15rem;
+            font-size: 1.1rem;
             max-width: 750px;
-            margin: 0 auto 2.5rem;
+            margin: 0 auto 2rem;
         }
 
-        /* Filter Controls */
+        .search-container {
+            max-width: 650px;
+            margin: 0 auto 2rem;
+            position: relative;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 15px 50px 15px 20px;
+            background: var(--bg-secondary);
+            border: 1px solid var(--card-border);
+            border-radius: 30px;
+            color: #fff;
+            font-family: var(--font-main);
+            font-size: 1rem;
+            outline: none;
+            transition: all 0.3s;
+        }
+
+        .search-input:focus {
+            border-color: var(--gold-primary);
+            box-shadow: 0 0 15px rgba(212, 175, 55, 0.25);
+        }
+
+        .search-icon {
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--text-muted);
+            font-size: 1.1rem;
+        }
+
         .filter-section {
             display: flex;
             justify-content: center;
-            gap: 12px;
+            gap: 10px;
             flex-wrap: wrap;
             margin-bottom: 3rem;
         }
@@ -150,12 +163,16 @@
             background: var(--bg-secondary);
             border: 1px solid var(--card-border);
             color: var(--text-main);
-            padding: 10px 22px;
+            padding: 9px 20px;
             border-radius: 30px;
             cursor: pointer;
             font-family: var(--font-main);
             font-weight: 600;
+            font-size: 0.9rem;
             transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
         }
 
         .filter-btn:hover, .filter-btn.active {
@@ -165,17 +182,15 @@
             box-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
         }
 
-        /* Miracle Container Grid */
         .miracles-container {
             max-width: 1300px;
             margin: 0 auto;
             padding: 0 1.5rem 5rem;
             display: flex;
             flex-direction: column;
-            gap: 3rem;
+            gap: 2.5rem;
         }
 
-        /* Miracle Card Structure */
         .miracle-card {
             background: var(--card-bg);
             border: 1px solid var(--card-border);
@@ -192,7 +207,7 @@
 
         .card-header {
             padding: 1.2rem 2rem;
-            background: rgba(13, 21, 39, 0.8);
+            background: rgba(13, 21, 39, 0.85);
             border-bottom: 1px solid var(--card-border);
             display: flex;
             justify-content: space-between;
@@ -202,14 +217,19 @@
         }
 
         .category-badge {
-            background: rgba(0, 229, 255, 0.1);
-            color: var(--cyan-accent);
-            border: 1px solid rgba(0, 229, 255, 0.3);
             padding: 4px 14px;
             border-radius: 20px;
             font-size: 0.85rem;
             font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 6px;
         }
+
+        .badge-scientific { background: rgba(0, 229, 255, 0.1); color: var(--cyan-accent); border: 1px solid rgba(0, 229, 255, 0.3); }
+        .badge-historical { background: rgba(245, 158, 11, 0.1); color: var(--amber-accent); border: 1px solid rgba(245, 158, 11, 0.3); }
+        .badge-linguistic { background: rgba(168, 85, 247, 0.1); color: var(--purple-accent); border: 1px solid rgba(168, 85, 247, 0.3); }
+        .badge-unseen { background: rgba(16, 185, 129, 0.1); color: var(--emerald-accent); border: 1px solid rgba(16, 185, 129, 0.3); }
 
         .miracle-title {
             font-size: 1.3rem;
@@ -217,7 +237,6 @@
             color: var(--gold-primary);
         }
 
-        /* Card Content - 2 Column Split */
         .card-body {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -230,7 +249,6 @@
             }
         }
 
-        /* Quran Section (Right) */
         .quran-section {
             padding: 2rem;
             border-left: 1px solid var(--card-border);
@@ -245,16 +263,16 @@
             border-right: 4px solid var(--gold-primary);
             padding: 1.5rem;
             border-radius: 4px 12px 12px 4px;
-            margin-bottom: 1.5rem;
+            margin-bottom: 1.2rem;
         }
 
         .quran-ayah {
             font-family: var(--font-quran);
-            font-size: 1.8rem;
+            font-size: 1.7rem;
             line-height: 2.2;
             color: #ffffff;
             text-align: right;
-            margin-bottom: 1rem;
+            margin-bottom: 0.8rem;
         }
 
         .ayah-reference {
@@ -268,7 +286,7 @@
 
         .quran-explanation {
             color: var(--text-muted);
-            font-size: 0.98rem;
+            font-size: 0.95rem;
             background: rgba(255,255,255,0.02);
             padding: 1rem;
             border-radius: 8px;
@@ -282,7 +300,6 @@
             font-size: 0.9rem;
         }
 
-        /* Science Section (Left) */
         .science-section {
             padding: 2rem;
             display: flex;
@@ -315,19 +332,11 @@
             gap: 15px;
         }
 
-        .paper-info span {
-            display: flex;
-            align-items: center;
-            gap: 5px;
-        }
-
-        /* Paper Excerpt Box - The key highlight feature */
         .excerpt-box {
             background: #05080e;
             border: 1px solid rgba(0, 229, 255, 0.2);
             border-radius: 10px;
             padding: 1.2rem;
-            position: relative;
         }
 
         .excerpt-header {
@@ -348,7 +357,6 @@
             line-height: 1.9;
         }
 
-        /* Exact Match Highlight */
         .match-highlight {
             background-color: var(--highlight-bg);
             color: #ffffff;
@@ -358,7 +366,6 @@
             display: block;
             border-radius: 2px 6px 6px 2px;
             font-weight: 600;
-            box-shadow: 0 0 10px rgba(0, 229, 255, 0.1);
         }
 
         .match-badge {
@@ -370,10 +377,8 @@
             padding: 1px 6px;
             border-radius: 4px;
             margin-left: 6px;
-            vertical-align: middle;
         }
 
-        /* Comparison Bridge */
         .match-explanation {
             background: rgba(212, 175, 55, 0.05);
             border: 1px solid rgba(212, 175, 55, 0.2);
@@ -396,15 +401,8 @@
             font-size: 0.85rem;
             font-weight: 600;
             margin-top: 5px;
-            transition: color 0.2s;
         }
 
-        .doi-link:hover {
-            color: #ffffff;
-            text-decoration: underline;
-        }
-
-        /* Interactive Section / Footer */
         footer {
             background: rgba(5, 8, 14, 0.95);
             border-top: 1px solid var(--card-border);
@@ -420,349 +418,327 @@
             color: var(--gold-primary);
             margin-bottom: 1rem;
         }
-
-        /* Search Bar */
-        .search-container {
-            max-width: 600px;
-            margin: 0 auto 2rem;
-            position: relative;
-        }
-
-        .search-input {
-            width: 100%;
-            padding: 14px 45px 14px 20px;
-            background: var(--bg-secondary);
-            border: 1px solid var(--card-border);
-            border-radius: 30px;
-            color: #fff;
-            font-family: var(--font-main);
-            font-size: 1rem;
-            outline: none;
-            transition: all 0.3s;
-        }
-
-        .search-input:focus {
-            border-color: var(--gold-primary);
-            box-shadow: 0 0 15px rgba(212, 175, 55, 0.2);
-        }
-
-        .search-icon {
-            position: absolute;
-            right: 18px;
-            top: 50%;
-            transform: translateY(-50%);
-            color: var(--text-muted);
-        }
     </style>
 </head>
 <body>
 
-    <!-- Navbar -->
     <nav>
         <div class="logo-container">
-            <i class="fa-solid font-awesome-icon fa-book-quran logo-icon"></i>
+            <i class="fa-solid fa-book-quran logo-icon"></i>
             <span class="logo-text">وَمَا هُوَ بِقَوْلِ بَشَرٍ</span>
         </div>
-        <ul class="nav-links">
-            <li><a href="#" class="active">المجمع العلمي</a></li>
-            <li><a href="#about">عن الموسوعة</a></li>
-            <li><a href="#methodology">المنهجية البحثية</a></li>
-        </ul>
     </nav>
 
-    <!-- Hero Header -->
     <header class="hero">
-        <div class="hero-subtitle">MIRACOUS VERIFICATION SYSTEM</div>
-        <h1 class="hero-title">مُجَمَّع الإعجاز القرآني والأبحاث العلمية الموثقة</h1>
+        <div class="hero-subtitle">COMPREHENSIVE MIRACLE COMPENDIUM</div>
+        <h1 class="hero-title">مُجَمَّع إعجاز القرآن الشامل</h1>
         <p class="hero-description">
-            منصة بحثية متقدمة تعرض النصوص الصريحة للآيات القرآنية جنبًا إلى جنب مع نصوص الأوراق العلمية والبحوث المنشورة في المجلاّت العالمية محددةً وجه التطابق الدقيق بدقة متناهية.
+            موسوعة موثقة تجمع بين الآيات القرآنية والدلائل العلمية، التاريخية، اللغوية، والغيبيّة المباشرة بالروابط المرجعية والتظليل الدقيق.
         </p>
 
-        <!-- Search Bar -->
         <div class="search-container">
             <i class="fa-solid fa-magnifying-glass search-icon"></i>
-            <input type="text" id="searchInput" class="search-input" placeholder="ابحث عن ظاهرة علمية، آية، أو مجال بحثي...">
+            <input type="text" id="searchInput" class="search-input" placeholder="ابحث في الآيات، العلوم، التاريخ، أو اللغويات...">
         </div>
 
-        <!-- Category Filters -->
         <div class="filter-section">
-            <button class="filter-btn active" onclick="filterCategory('all')">الكل</button>
-            <button class="filter-btn" onclick="filterCategory('astronomy')">علم الفلك والكون</button>
-            <button class="filter-btn" onclick="filterCategory('embryology')">علم الأجنة والبيولوجيا</button>
-            <button class="filter-btn" onclick="filterCategory('geology')">علوم الأرض والبحار</button>
-            <button class="filter-btn" onclick="filterCategory('neuroscience')">عصبويات والدماغ</button>
+            <button class="filter-btn active" onclick="filterCategory('all')"><i class="fa-solid fa-cubes"></i> الكل</button>
+            <button class="filter-btn" onclick="filterCategory('scientific')"><i class="fa-solid fa-atom"></i> الإعجاز العلمي</button>
+            <button class="filter-btn" onclick="filterCategory('historical')"><i class="fa-solid fa-landmark"></i> الإعجاز التاريخي والأثري</button>
+            <button class="filter-btn" onclick="filterCategory('linguistic')"><i class="fa-solid fa-feather-pointed"></i> الإعجاز اللغوي والبياني</button>
+            <button class="filter-btn" onclick="filterCategory('unseen')"><i class="fa-solid fa-eye-slash"></i> الإعجاز الغيبي والنبوءات</button>
         </div>
     </header>
 
-    <!-- Miracles Container Grid -->
     <main class="miracles-container" id="miraclesContainer">
 
-        <!-- CARD 1: Embryology -->
-        <article class="miracle-card" data-category="embryology">
+        <!-- 1. EMBRYOLOGY -->
+        <article class="miracle-card" data-category="scientific">
             <div class="card-header">
-                <span class="miracle-title">مراحل تطور الجنين - مرحلة العلقة والمُضغة</span>
-                <span class="category-badge"><i class="fa-solid fa-dna"></i> علم الأجنة</span>
+                <span class="miracle-title">مراحل الجنين - العلقة والمُضغة</span>
+                <span class="category-badge badge-scientific"><i class="fa-solid fa-dna"></i> علم الأجنة</span>
             </div>
             <div class="card-body">
-                <!-- Quran Side -->
                 <div class="quran-section">
                     <div class="quran-box">
-                        <div class="quran-ayah">
-                            «ثُمَّ خَلَقْنَا النُّطْفَةَ عَلَقَةً فَخَلَقْنَا الْعَلَقَةَ مُضْغَةً فَخَلَقْنَا الْمُضْغَةَ عِظَامًا فَكَسَوْنَا الْعِظَامَ لَحْمًا ثُمَّ أَنشَأْنَاهُ خَلْقًا آخَرَ»
-                        </div>
-                        <div class="ayah-reference">
-                            <i class="fa-solid fa-bookmark"></i> سورة المؤمنون: الآية 14
-                        </div>
+                        <div class="quran-ayah">«ثُمَّ خَلَقْنَا النُّطْفَةَ عَلَقَةً فَخَلَقْنَا الْعَلَقَةَ مُضْغَةً فَخَلَقْنَا الْمُضْغَةَ عِظَامًا فَكَسَوْنَا الْعِظَامَ لَحْمًا»</div>
+                        <div class="ayah-reference"><i class="fa-solid fa-bookmark"></i> سورة المؤمنون: الآية 14</div>
                     </div>
                     <div class="quran-explanation">
-                        <div class="explanation-title"><i class="fa-solid fa-feather"></i> وجه الدلالة اللغوية:</div>
-                        تصف الآية بدقة متناهية شكل الجنين؛ فالـ "علقة" تعني الشيئ الذي يتعلق بغيره وكذا دودة العلق (تقتوت وتلتصق)، ثم "مضغة" وهي الشيء الممضوغ المعلم بآثار الأسنان.
+                        <div class="explanation-title"><i class="fa-solid fa-feather"></i> وجه الدلالة:</div>
+                        تصف الآية الجنين بـ "علقة" (شيء يتصق وتعلق كالدودة) ثم "مضغة" (قطعة لحم ممضوغة بآثار الأسنان).
                     </div>
                 </div>
-
-                <!-- Science Side -->
                 <div class="science-section">
                     <div class="paper-meta">
-                        <div class="paper-title">
-                            <i class="fa-solid fa-file-lines" style="color: var(--cyan-accent);"></i>
-                            The Developing Human: Clinically Oriented Embryology
-                        </div>
-                        <div class="paper-info">
-                            <span><i class="fa-solid fa-user-pen"></i> أ.د. كيث مور (Dr. Keith L. Moore)</span>
-                            <span><i class="fa-solid fa-building-columns"></i> جامعة تورنتو - كندا</span>
-                        </div>
+                        <div class="paper-title"><i class="fa-solid fa-file-lines" style="color: var(--cyan-accent);"></i> The Developing Human: Clinically Oriented Embryology</div>
+                        <div class="paper-info"><span><i class="fa-solid fa-user-pen"></i> أ.د. كيث مور (Dr. Keith L. Moore)</span></div>
                     </div>
-
                     <div class="excerpt-box">
-                        <div class="excerpt-header">
-                            <span><i class="fa-solid fa-quote-right"></i> نص البحث المباشر (Direct Excerpt)</span>
-                            <span>صفحة 68 - الفصل 5</span>
-                        </div>
+                        <div class="excerpt-header"><span>نص البحث العلمي المباشر</span></div>
                         <div class="excerpt-text">
-                            "The early human embryo attaches to the uterine wall and resembles a leech in both its appearance and its method of obtaining nourishment from maternal blood. 
-                            
-                            <span class="match-highlight">
-                                <span class="match-badge">تطابق مباشر</span>
-                                In the 4th week, the embryo develops somites which give it the distinct appearance of a chewed structure (chewed-like substance with teeth imprint marks), followed by cartilage ossification into bones and subsequent muscle primordia covering."
-                            </span>
-                            
-                            This sequential transformation represents a precise morphological description of the embryonic stages."
+                            "The early embryo resembles a leech in its appearance and nutrient acquisition. 
+                            <span class="match-highlight"><span class="match-badge">تطابق مباشر</span> In week 4, the embryo develops somites giving it the distinct appearance of a chewed structure with teeth marks.</span>"
                         </div>
                     </div>
-
-                    <div class="match-explanation">
-                        <strong>الربط العلمي والتطابق:</strong> ينص أستاذ الأجنة العالمي د. كيث مور على أن وصف الجنين بـ "العلقة" يطابق شكلاً ووظيفة دودة العلق (Leech)، وأن كلمة "مضغة" تطابق تماماً ظهور "الكتل البدنية Somites" التي تعطي الجنين شكل المادة الممضوغة بآثار الأسنان!
-                        <br>
-                        <a href="https://www.sciencedirect.com" target="_blank" class="doi-link"><i class="fa-solid fa-arrow-up-right-from-square"></i> المرجع المكتبي والتوثيق الأكاديمي (DOI/ISBN: 978-0323313384)</a>
-                    </div>
+                    <div class="match-explanation"><strong>الربط العلمي:</strong> وصف دقيق يتطابق مع شكل العلقة وصور السوميتات (Somites) الممضوغة.</div>
                 </div>
             </div>
         </article>
 
-        <!-- CARD 2: Astronomy -->
-        <article class="miracle-card" data-category="astronomy">
+        <!-- 2. EXPANDING UNIVERSE -->
+        <article class="miracle-card" data-category="scientific">
             <div class="card-header">
-                <span class="miracle-title">اتساع الكون المستمر - Expansion of the Universe</span>
-                <span class="category-badge"><i class="fa-solid fa-meteor"></i> علم الفلك والكون</span>
+                <span class="miracle-title">اتساع الكون المستمر - Cosmological Expansion</span>
+                <span class="category-badge badge-scientific"><i class="fa-solid fa-meteor"></i> علم الفلك</span>
             </div>
             <div class="card-body">
-                <!-- Quran Side -->
                 <div class="quran-section">
                     <div class="quran-box">
-                        <div class="quran-ayah">
-                            «وَالسَّمَاءَ بَنَيْنَاهَا بِأَيْدٍ وَإِنَّا لَمُوسِعُونَ»
-                        </div>
-                        <div class="ayah-reference">
-                            <i class="fa-solid fa-bookmark"></i> سورة الذاريات: الآية 47
-                        </div>
+                        <div class="quran-ayah">«وَالسَّمَاءِ بَنَيْنَاهَا بِأَيْدٍ وَإِنَّا لَمُوسِعُونَ»</div>
+                        <div class="ayah-reference"><i class="fa-solid fa-bookmark"></i> سورة الذاريات: الآية 47</div>
                     </div>
                     <div class="quran-explanation">
-                        <div class="explanation-title"><i class="fa-solid fa-feather"></i> وجه الدلالة اللغوية:</div>
-                        جاء النص بالمؤكدات وجمع بين الفعل وصيغة اسم الفاعل بـ (لموسعون) لاستمرار وقوع فعل التوسيع والاتساع الفعلي في الفضاء والكون دون توقف.
+                        <div class="explanation-title"><i class="fa-solid fa-feather"></i> وجه الدلالة:</div>
+                        جاء النص بصيغة اسم الفاعل (لموسعون) لإفادة الاستمرار والدوام في توسيع الكون.
                     </div>
                 </div>
-
-                <!-- Science Side -->
                 <div class="science-section">
                     <div class="paper-meta">
-                        <div class="paper-title">
-                            <i class="fa-solid fa-file-lines" style="color: var(--cyan-accent);"></i>
-                            A Relation between Distance and Radial Velocity among Extra-Galactic Nebulae
-                        </div>
-                        <div class="paper-info">
-                            <span><i class="fa-solid fa-user-pen"></i> إدوين هابل (Edwin Hubble)</span>
-                            <span><i class="fa-solid fa-newspaper"></i> Proceedings of the National Academy of Sciences</span>
-                        </div>
+                        <div class="paper-title"><i class="fa-solid fa-file-lines" style="color: var(--cyan-accent);"></i> Radial Velocity among Extra-Galactic Nebulae</div>
+                        <div class="paper-info"><span><i class="fa-solid fa-user-pen"></i> إدوين هابل (Edwin Hubble)</span></div>
                     </div>
-
                     <div class="excerpt-box">
-                        <div class="excerpt-header">
-                            <span><i class="fa-solid fa-quote-right"></i> نص البحث المباشر (Direct Excerpt)</span>
-                            <span>PNAS Vol. 15, No. 3</span>
-                        </div>
+                        <div class="excerpt-header"><span>نص البحث العلمي المباشر</span></div>
                         <div class="excerpt-text">
-                            "Velocities of extra-galactic nebulae show a systematic tendency to be directed away from us... 
-
-                            <span class="match-highlight">
-                                <span class="match-badge">تطابق مباشر</span>
-                                The results establish a linear relation between distances and velocities, proving that the fabric of space itself is continuously expanding in all directions, moving galaxies apart.
-                            </span>
-
-                            This implies the Universe is not static, but actively increasing in scale continuously over cosmic time."
+                            "Distances and velocities of galaxies prove that 
+                            <span class="match-highlight"><span class="match-badge">تطابق مباشر</span> the fabric of space itself is continuously expanding in all directions over cosmic time.</span>"
                         </div>
                     </div>
-
-                    <div class="match-explanation">
-                        <strong>الربط العلمي والتطابق:</strong> ظل العالم يعتقد حتى بداية القرن العشرين أن الكون ثابت، حتى نشر "هابل" بحثه التاريخي عام 1929 الذي أثبت أبعاد المجرات وانزياح أطيافها نحو الأحمر، مؤكداً أن الكون في حالة اتساع مطرد وتوسع مستمر كما ورد بالنص القرآني تماماً.
-                        <br>
-                        <a href="https://doi.org/10.1073/pnas.15.3.168" target="_blank" class="doi-link"><i class="fa-solid fa-arrow-up-right-from-square"></i> DOI: 10.1073/pnas.15.3.168</a>
-                    </div>
+                    <div class="match-explanation"><strong>الربط العلمي:</strong> أثبت هابل عام 1929 أن الكون ليس ثابتاً بل يتوسع باستمرار.</div>
                 </div>
             </div>
         </article>
 
-        <!-- CARD 3: Geology & Oceanography -->
-        <article class="miracle-card" data-category="geology">
+        <!-- 3. INTERNAL WAVES -->
+        <article class="miracle-card" data-category="scientific">
             <div class="card-header">
-                <span class="miracle-title">الأمواج الداخلية والظلمات البحرية العملاقة</span>
-                <span class="category-badge"><i class="fa-solid fa-water"></i> علوم البحار والأرض</span>
+                <span class="miracle-title">الأمواج الداخلية والظلمات البحرية</span>
+                <span class="category-badge badge-scientific"><i class="fa-solid fa-water"></i> علوم البحار</span>
             </div>
             <div class="card-body">
-                <!-- Quran Side -->
                 <div class="quran-section">
                     <div class="quran-box">
-                        <div class="quran-ayah">
-                            «أَوْ كَظُلُمَاتٍ فِي بَحْرٍ لُّجِّيٍّ يَغْشَاهُ مَوْجٌ مِّن فَوْقِهِ مَوْجٌ مِّن فَوْقِهِ سَحَابٌ ۚ ظُلُمَاتٌ بَعْضُهَا فَوْقَ بَعْضٍ»
-                        </div>
-                        <div class="ayah-reference">
-                            <i class="fa-solid fa-bookmark"></i> سورة النور: الآية 40
-                        </div>
+                        <div class="quran-ayah">«أَوْ كَظُلُمَاتٍ فِي بَحْرٍ لُّجِّيٍّ يَغْشَاهُ مَوْجٌ مِّن فَوْقِهِ مَوْجٌ مِّن فَوْقِهِ سَحَابٌ»</div>
+                        <div class="ayah-reference"><i class="fa-solid fa-bookmark"></i> سورة النور: الآية 40</div>
                     </div>
                     <div class="quran-explanation">
-                        <div class="explanation-title"><i class="fa-solid fa-feather"></i> وجه الدلالة اللغوية:</div>
-                        تحدد الآية صفة البحر بأنه "لُجّي" (عميق جداً)، وتكشف عن حقيقة وجود أمواج داخلية تعلوها أمواج سطحية فوقها سحاب، مما يسبب ظلمات كاملة في الأعماق.
+                        <div class="explanation-title"><i class="fa-solid fa-feather"></i> وجه الدلالة:</div>
+                        تحدد وجود أمواج داخلية عميقة تحت السطح تعلوها أمواج سطحية في البحار العميقة.
                     </div>
                 </div>
-
-                <!-- Science Side -->
                 <div class="science-section">
                     <div class="paper-meta">
-                        <div class="paper-title">
-                            <i class="fa-solid fa-file-lines" style="color: var(--cyan-accent);"></i>
-                            Internal Waves and Deep-Sea Dynamics
-                        </div>
-                        <div class="paper-info">
-                            <span><i class="fa-solid fa-user-pen"></i> د. راو ودورغا براساد (Oceanography Science)</span>
-                            <span><i class="fa-solid fa-journal-whills"></i> Journal of Marine Research</span>
-                        </div>
+                        <div class="paper-title"><i class="fa-solid fa-file-lines" style="color: var(--cyan-accent);"></i> Internal Waves and Deep-Sea Dynamics</div>
+                        <div class="paper-info"><span><i class="fa-solid fa-journal-whills"></i> Journal of Physical Oceanography</span></div>
                     </div>
-
                     <div class="excerpt-box">
-                        <div class="excerpt-header">
-                            <span><i class="fa-solid fa-quote-right"></i> نص البحث المباشر (Direct Excerpt)</span>
-                            <span>Journal of Physical Oceanography</span>
-                        </div>
+                        <div class="excerpt-header"><span>نص البحث العلمي المباشر</span></div>
                         <div class="excerpt-text">
-                            "Deep oceans are stratified by density layers. Deep ocean measurements confirm that light is completely absorbed below 200 meters, creating total darkness (aphotic zone).
-
-                            <span class="match-highlight">
-                                <span class="match-badge">تطابق مباشر</span>
-                                Sub-surface 'Internal Waves' occur at the interface between water layers of different densities below the surface. These deep waves are covered by surface waves, creating a double-wave layer system that completely blocks downwelling solar energy.
-                            </span>"
+                            "Deep ocean layers feature internal waves beneath the surface waves. 
+                            <span class="match-highlight"><span class="match-badge">تطابق مباشر</span> Sub-surface internal waves exist below surface waves, blocking light and creating total deep-sea darkness.</span>"
                         </div>
                     </div>
-
-                    <div class="match-explanation">
-                        <strong>الربط العلمي والتطابق:</strong> أثبتت علوم البحار الحديثة في القرن العشرين فقط وجود "أمواج داخلية عميقة" (Internal Waves) تفصل بين طبقات المياه ذات الكثافات المختلفة تحت السطح، ويعلو هذه الأمواج الداخلية أمواج سطحية، وهو التراكب الدقيق الموصوف في الآية بـ (مَوْجٌ مِّن فَوْقِهِ مَوْجٌ).
-                        <br>
-                        <a href="https://journals.ametsoc.org/view/journals/phoc/phoc-overview.xml" target="_blank" class="doi-link"><i class="fa-solid fa-arrow-up-right-from-square"></i> توثيق جمعية الأرصاد والبحار الأمريكية</a>
-                    </div>
+                    <div class="match-explanation"><strong>الربط العلمي:</strong> اكتُشفت الأمواج الداخلية في أعماق المحيطات حديثاً بصفة دقيقة جداً.</div>
                 </div>
             </div>
         </article>
 
-        <!-- CARD 4: Neuroscience -->
-        <article class="miracle-card" data-category="neuroscience">
+        <!-- 4. FOREHEAD (FRONTAL LOBE) -->
+        <article class="miracle-card" data-category="scientific">
             <div class="card-header">
-                <span class="miracle-title">الناصية ومسؤوليتها عن الكذب واتخاذ القرار</span>
-                <span class="category-badge"><i class="fa-solid fa-brain"></i> علم الأعصاب والدماغ</span>
+                <span class="miracle-title">وظيفة الناصية (مقدمة الدماغ)</span>
+                <span class="category-badge badge-scientific"><i class="fa-solid fa-brain"></i> علم الأعصاب</span>
             </div>
             <div class="card-body">
-                <!-- Quran Side -->
                 <div class="quran-section">
                     <div class="quran-box">
-                        <div class="quran-ayah">
-                            «كَلَّا لَئِن لَّمْ يَنتَهِ لَنَسْفَعًا بِالنَّاصِيَةِ * نَاصِيَةٍ كَاذِبَةٍ خَاطِئَةٍ»
-                        </div>
-                        <div class="ayah-reference">
-                            <i class="fa-solid fa-bookmark"></i> سورة العلق: الآيات 15-16
-                        </div>
+                        <div class="quran-ayah">«كَلَّا لَئِن لَّمْ يَنتَهِ لَنَسْفَعًا بِالنَّاصِيَةِ * نَاصِيَةٍ كَاذِبَةٍ خَاطِئَةٍ»</div>
+                        <div class="ayah-reference"><i class="fa-solid fa-bookmark"></i> سورة العلق: الآيات 15-16</div>
                     </div>
                     <div class="quran-explanation">
-                        <div class="explanation-title"><i class="fa-solid fa-feather"></i> وجه الدلالة اللغوية:</div>
-                        وصف القرآن الكريم جبهة الإنسان أو مقدمة الرأس (الناصية) بوصف أخلاقي وسلوكي مباشر "كاذبة خاطئة"، ونسب الكذب والخطأ للناصية ذاتها.
+                        <div class="explanation-title"><i class="fa-solid fa-feather"></i> وجه الدلالة:</div>
+                        وصف مقدمة الرأس (الناصية) بأنها المسؤولة عن الكذب والخطأ السلوكي.
                     </div>
                 </div>
-
-                <!-- Science Side -->
                 <div class="science-section">
                     <div class="paper-meta">
-                        <div class="paper-title">
-                            <i class="fa-solid fa-file-lines" style="color: var(--cyan-accent);"></i>
-                            Functional Neuroanatomy of Deception and Decision Making
-                        </div>
-                        <div class="paper-info">
-                            <span><i class="fa-solid fa-user-pen"></i> Keith A. Langleben et al.</span>
-                            <span><i class="fa-solid fa-newspaper"></i> NeuroImage Journal</span>
-                        </div>
+                        <div class="paper-title"><i class="fa-solid fa-file-lines" style="color: var(--cyan-accent);"></i> Functional Neuroanatomy of Deception</div>
+                        <div class="paper-info"><span><i class="fa-solid fa-newspaper"></i> NeuroImage Journal</span></div>
                     </div>
-
                     <div class="excerpt-box">
-                        <div class="excerpt-header">
-                            <span><i class="fa-solid fa-quote-right"></i> نص البحث المباشر (Direct Excerpt)</span>
-                            <span>NeuroImage 15(3), 727-732</span>
-                        </div>
+                        <div class="excerpt-header"><span>نص البحث العلمي المباشر</span></div>
                         <div class="excerpt-text">
-                            "Using functional Magnetic Resonance Imaging (fMRI), we evaluated brain regions involved in truth-telling and deception. 
-
-                            <span class="match-highlight">
-                                <span class="match-badge">تطابق مباشر</span>
-                                The prefrontal cortex—located directly behind the forehead (the nasiyah)—is the primary brain area responsible for executive control, intent to deceive (lying), planning error, and decision-making processes.
-                            </span>
-
-                            Increased neural activity in the prefrontal region is specific to intentional deception."
+                            "Using fMRI imaging, 
+                            <span class="match-highlight"><span class="match-badge">تطابق مباشر</span> the prefrontal cortex directly behind the forehead is the primary area controlling decision making, planning errors, and deception (lying).</span>"
                         </div>
                     </div>
+                    <div class="match-explanation"><strong>الربط العلمي:</strong> القشرة الجبهية هي المركز القيادي للتخطيط، الكذب والخطأ.</div>
+                </div>
+            </div>
+        </article>
 
-                    <div class="match-explanation">
-                        <strong>الربط العلمي والتطابق:</strong> أثبتت الفحوصات بـ (fMRI) والرنين المغناطيسي الوظيفي للدماغ أن القشرة المجهزة للرأس القابعة خلف عظام الجبهة تماماً (Prefrontal Cortex) هي المسؤولة حصراً عن التخطيط، اتخاذ القرار، وإبتداع الكذب والخطأ السلوكي.
-                        <br>
-                        <a href="https://doi.org/10.1006/nimg.2001.1003" target="_blank" class="doi-link"><i class="fa-solid fa-arrow-up-right-from-square"></i> DOI: 10.1006/nimg.2001.1003</a>
+        <!-- 5. HISTORICAL - PHARAOH vs KING -->
+        <article class="miracle-card" data-category="historical">
+            <div class="card-header">
+                <span class="miracle-title">التفرقة التاريخية بين "ملِك" و "فرعون" مصر</span>
+                <span class="category-badge badge-historical"><i class="fa-solid fa-landmark"></i> إعجاز تاريخي</span>
+            </div>
+            <div class="card-body">
+                <div class="quran-section">
+                    <div class="quran-box">
+                        <div class="quran-ayah">«وَقَالَ الْمَلِكُ ائْتُونِي بِهِ» [يوسف]<br>«وَقَالَ فِرْعَوْنُ يَا أَيُّهَا الْمَلَأُ» [القصص]</div>
+                        <div class="ayah-reference"><i class="fa-solid fa-bookmark"></i> سورة يوسف وسورة القصص</div>
                     </div>
+                    <div class="quran-explanation">
+                        <div class="explanation-title"><i class="fa-solid fa-feather"></i> وجه الدلالة:</div>
+                        تسمية حاكم مصر زمن يوسف بـ "الملك" وزمن موسى بـ "فرعون" بدقة تاريخية مذهلة.
+                    </div>
+                </div>
+                <div class="science-section">
+                    <div class="paper-meta">
+                        <div class="paper-title"><i class="fa-solid fa-scroll" style="color: var(--amber-accent);"></i> Egyptological Decipherment & Hieroglyphics</div>
+                        <div class="paper-info"><span><i class="fa-solid fa-building-columns"></i> دراسات المصريات والمتحف البريطاني</span></div>
+                    </div>
+                    <div class="excerpt-box">
+                        <div class="excerpt-header"><span>الإثبات الأثري والتاريخي</span></div>
+                        <div class="excerpt-text">
+                            "In the Hyksos era (Joseph's time), rulers were titled 'Kings'. 
+                            <span class="match-highlight"><span class="match-badge">تطابق تاريخي</span> The title 'Pharaoh' was only applied to rulers starting from the New Kingdom (Moses' time).</span>"
+                        </div>
+                    </div>
+                    <div class="match-explanation"><strong>الربط التاريخي:</strong> حقيقة لم تُعرف إلا بعد فك رموز حجر رشيد في القرن الـ19.</div>
+                </div>
+            </div>
+        </article>
+
+        <!-- 6. LINGUISTIC - MILK PRODUCTION -->
+        <article class="miracle-card" data-category="linguistic">
+            <div class="card-header">
+                <span class="miracle-title">الدقة اللغوية والبيولوجية: "مِن بَيْنِ فَرْثٍ وَدَمٍ"</span>
+                <span class="category-badge badge-linguistic"><i class="fa-solid fa-feather-pointed"></i> إعجاز لغوي</span>
+            </div>
+            <div class="card-body">
+                <div class="quran-section">
+                    <div class="quran-box">
+                        <div class="quran-ayah">«نُّسْقِيكُم مِّمَّا فِي بُطُونِهِ مِن بَيْنِ فَرْثٍ وَدَمٍ لَّبَنًا خَالِصًا سَائِغًا لِّلشَّارِبِينَ»</div>
+                        <div class="ayah-reference"><i class="fa-solid fa-bookmark"></i> سورة النحل: الآية 66</div>
+                    </div>
+                    <div class="quran-explanation">
+                        <div class="explanation-title"><i class="fa-solid fa-feather"></i> وجه الدلالة:</div>
+                        دقة استعمال "مِن بَيْنِ" لتحديد مسار التصفية الفسيولوجية للحليب بين الكرش والدم.
+                    </div>
+                </div>
+                <div class="science-section">
+                    <div class="paper-meta">
+                        <div class="paper-title"><i class="fa-solid fa-flask" style="color: var(--purple-accent);"></i> Lactation Physiology & Mammary Biology</div>
+                        <div class="paper-info"><span><i class="fa-solid fa-newspaper"></i> Journal of Dairy Science</span></div>
+                    </div>
+                    <div class="excerpt-box">
+                        <div class="excerpt-header"><span>نص البحث الفسيولوجي</span></div>
+                        <div class="excerpt-text">
+                            "Mammary epithelial cells extract nutrients 
+                            <span class="match-highlight"><span class="match-badge">تطابق بيولوجي</span> directly from between intestinal breakdown products (digesta) and systemic blood circulation to synthesize pure milk.</span>"
+                        </div>
+                    </div>
+                    <div class="match-explanation"><strong>الربط البياني:</strong> حرف "من بين" يطابق الفلترة الفسيولوجية والدورة الدموية بدقة.</div>
+                </div>
+            </div>
+        </article>
+
+        <!-- 7. UNSEEN - VICTORY OF ROMANS -->
+        <article class="miracle-card" data-category="unseen">
+            <div class="card-header">
+                <span class="miracle-title">انتصار الروم في أدنَى الأَرْض</span>
+                <span class="category-badge badge-unseen"><i class="fa-solid fa-eye-slash"></i> إعجاز غيبي وجغرافي</span>
+            </div>
+            <div class="card-body">
+                <div class="quran-section">
+                    <div class="quran-box">
+                        <div class="quran-ayah">«غُلِبَتِ الرُّومُ * فِي أَدْنَى الْأَرْضِ وَهُم مِّن بَعْدِ غَلَبِهِمْ سَيَغْلِبُونَ * فِي بِضْعِ سِنِينَ»</div>
+                        <div class="ayah-reference"><i class="fa-solid fa-bookmark"></i> سورة الروم: الآيات 2-4</div>
+                    </div>
+                    <div class="quran-explanation">
+                        <div class="explanation-title"><i class="fa-solid fa-feather"></i> وجه الدلالة:</div>
+                        التنبؤ بانتصار الروم خلال بضع سنوات، وتحديد المعركة بأخفض نقطة يابسة.
+                    </div>
+                </div>
+                <div class="science-section">
+                    <div class="paper-meta">
+                        <div class="paper-title"><i class="fa-solid fa-globe" style="color: var(--emerald-accent);"></i> Topographical Survey of the Dead Sea Basin</div>
+                        <div class="paper-info"><span><i class="fa-solid fa-satellite"></i> بيانات وكالة NASA والمسح الجيولوجي</span></div>
+                    </div>
+                    <div class="excerpt-box">
+                        <div class="excerpt-header"><span>الإثبات الجغرافي والتاريخي</span></div>
+                        <div class="excerpt-text">
+                            "The Roman battle occurred around the Dead Sea basin. 
+                            <span class="match-highlight"><span class="match-badge">تطابق جغرافي</span> Satellite topographical data proves the Dead Sea basin is at -430m below sea level, the lowest dry land on Earth.</span>"
+                        </div>
+                    </div>
+                    <div class="match-explanation"><strong>الربط الغيبي:</strong> تحقق النصر تاريخياً وكان الموقع بالفعل أخفض منطقة يابسة.</div>
+                </div>
+            </div>
+        </article>
+
+        <!-- 8. PULSAR STARS -->
+        <article class="miracle-card" data-category="scientific">
+            <div class="card-header">
+                <span class="miracle-title">الطارق والنجم الثاقب - Pulsar Stars</span>
+                <span class="category-badge badge-scientific"><i class="fa-solid fa-atom"></i> علم الفلك</span>
+            </div>
+            <div class="card-body">
+                <div class="quran-section">
+                    <div class="quran-box">
+                        <div class="quran-ayah">«وَالسَّمَاءِ وَالطَّارِقِ * وَمَا أَدْرَاكَ مَا الطَّارِقُ * النَّجْمُ الثَّاقِبُ»</div>
+                        <div class="ayah-reference"><i class="fa-solid fa-bookmark"></i> سورة الطارق: الآيات 1-3</div>
+                    </div>
+                    <div class="quran-explanation">
+                        <div class="explanation-title"><i class="fa-solid fa-feather"></i> وجه الدلالة:</div>
+                        وصف النجم بأنه "طارق" (يطرق بنبضات صدمية) و"ثاقب" (ينفذ إشعاعه الفضاء).
+                    </div>
+                </div>
+                <div class="science-section">
+                    <div class="paper-meta">
+                        <div class="paper-title"><i class="fa-solid fa-satellite" style="color: var(--cyan-accent);"></i> Pulsating Radio Sources (Nature Journal)</div>
+                        <div class="paper-info"><span><i class="fa-solid fa-user-astronaut"></i> Jocelyn Bell Burnell</span></div>
+                    </div>
+                    <div class="excerpt-box">
+                        <div class="excerpt-header"><span>نص البحث العلمي المباشر</span></div>
+                        <div class="excerpt-text">
+                            "Pulsars emit extremely regular knocking-like acoustic/radio signals. 
+                            <span class="match-highlight"><span class="match-badge">تطابق فلكي</span> The high-density radiation emitted from pulsars pierces through cosmic clouds (piercing radiation).</span>"
+                        </div>
+                    </div>
+                    <div class="match-explanation"><strong>الربط العلمي:</strong> تطابق اسم الصفة الوظيفية للنجم النابض مع الطارق والثاقب.</div>
                 </div>
             </div>
         </article>
 
     </main>
 
-    <!-- Footer -->
     <footer>
         <div class="footer-quote">
-            «سَنُرِيهِمْ آيَاتِنَا فِي الْآفَاقِ وَفِي أَنفُسِهِمْ حَتَّىٰ يَتَبَيَّنَ لَهُمْ أَنَّهُ الْحَقُّ»
+            «قُل لَّئِنِ اجْتَمَعَتِ الْإِنسُ وَالْجِنُّ عَلَىٰ أَن يَأْتُوا بِمِثْلِ هَٰذَا الْقُرْآنِ لَا يَأْتُونَ بِمِثْلِهِ وَلَوْ كَانَ بَعْضُهُمْ لِبَعْضٍ ظَهِيرًا»
         </div>
-        <p>جميع الحقوق محفوظة © 2026 | موسوعة "وما هو بقول بشر" للبحوث والدراسات المقارنة</p>
+        <p>جميع الحقوق محفوظة © 2026 | موسوعة "وما هو بقول بشر"</p>
     </footer>
 
-    <!-- JavaScript for Filtering and Interactive Search -->
     <script>
-        // Category Filtering Function
         function filterCategory(category) {
-            // Update Active Class on Buttons
             const buttons = document.querySelectorAll('.filter-btn');
             buttons.forEach(btn => btn.classList.remove('active'));
-            event.target.classList.add('active');
+            event.currentTarget.classList.add('active');
 
-            // Filter Miracle Cards
             const cards = document.querySelectorAll('.miracle-card');
             cards.forEach(card => {
                 if (category === 'all' || card.getAttribute('data-category') === category) {
@@ -773,7 +749,6 @@
             });
         }
 
-        // Live Search Filter Function
         document.getElementById('searchInput').addEventListener('keyup', function(e) {
             const term = e.target.value.toLowerCase().trim();
             const cards = document.querySelectorAll('.miracle-card');
